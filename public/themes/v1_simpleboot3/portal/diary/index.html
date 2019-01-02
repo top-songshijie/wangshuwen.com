@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>个人日记-个人博客</title>
+    <meta name="keywords" content="个人博客" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/index.css"/>
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/style.css"/>
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/animate.css"/>
+    <script type="text/javascript" src="__TMPL__/public/assets/js/jquery1.42.min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/js/jquery.SuperSlide.2.1.1.js"></script>
+    <!--[if lt IE 9]>
+    <script src="__TMPL__/public/assets/js/html5.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+<!--header start-->
+<include file="public@header"/>
+<!--header end-->
+<!--nav-->
+<include file="public@nav"/>
+<!--nav end-->
+<!--content start-->
+<div id="content">
+    <!--left-->
+    <div class="left" id="riji">
+        <div class="weizi">
+            <div class="wz_text">当前位置：<a href="#">首页</a>><h1>个人日记</h1></div>
+        </div>
+        <div class="rj_content">
+            <volist name="list" id="vo">
+            <div class="shiguang animated bounceIn">
+                <div class="left sg_ico">
+                    <img src="{:cmf_get_image_preview_url($vo['thumb'])}" width="120" height="120" alt=""/>
+                </div>
+                <div class="right sg_text">
+                    <img src="__TMPL__/public/assets/images/left.png" width="13" height="16" alt="左图标"/>
+                    {$vo.content}
+                </div>
+                <div class="clear"></div>
+            </div>
+            </volist>
+        </div>
+    </div>
+    <!--end left -->
+    <!--侧边栏目分类-->
+    <include file="public@side"/>
+    <!--end-->
+
+</div>
+<!--content end-->
+<!--footer start-->
+<include file="public@footer"/>
+<!--footer end-->
+<script type="text/javascript">jQuery(".lanmubox").slide({easing:"easeOutBounce",delayTime:400});</script>
+<script  type="text/javascript" src="__TMPL__/public/assets/js/nav.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,188 @@
+<!doctype html>
+
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>{$info.title} - 1杯浊酒</title>
+    <meta charset="utf-8" />
+    <meta content="{$site_info.site_seo_description}" name="description" />
+    <meta content="{$site_info.site_seo_keywords}" name="keywords" />
+    <meta content="webkit" name="renderer" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="__TMPL__/public/assets/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="__TMPL__/public/assets/static/css/nprogress.css" rel="stylesheet" type="text/css" />
+    <link href="__TMPL__/public/assets/static/css/javaweb.css" rel="stylesheet" type="text/css" />
+    <link href="__TMPL__/public/assets/static/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/favicon.ico" rel="apple-touch-icon-precomposed" />
+    <link href="/favicon.ico" rel="shortcut icon" />
+    <script src="__TMPL__/public/assets/static/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+    <script>window.location.href = "upgrade-browser";</script>
+    <![endif]-->
+    <!--[if gte IE 9]>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/respond.min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/selectivizr-min.js"></script>
+    <![endif]-->
+    {$site_info.site_analytics}
+</head>
+<body class="user-select single">
+<header class="header">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#header-navbar" data-toggle="collapse" type="button">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="logo hvr-bounce-in">
+                    <a href="/" title="1杯浊酒 www.wangshuwen.com"><img alt="1杯浊酒" src="__TMPL__/public/assets/static/picture/logo.png" /></a>
+                </h1>
+            </div>
+            <div class="collapse navbar-collapse" id="header-navbar">
+                <ul class="nav navbar-nav navbar-right js-category-link">
+                    <li category-id="0"><a href="/">首页</a></li>
+                    <li category-id="1"><a href="{:url('article/index')}">一杯浊酒</a></li>
+                    <li category-id="2"><a href="{:url('article/index2')}">素材模板</a></li>
+                    <!--<li category-id="3"><a href="/article/category/3">编程书籍</a></li>-->
+                    <!--<li category-id="4"><a href="/article/category/4">开发工具</a></li>-->
+                    <li><a href="{:url('message/index')}">留言板</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<!--<script type="text/javascript" src="__TMPL__/public/assets/static/js/shcore.js"></script>-->
+<!--<link rel="stylesheet" href="__TMPL__/public/assets/static/css/shcoredefault.css">-->
+<!--<script type="text/javascript">-->
+<!--SyntaxHighlighter.all();-->
+<!--</script>-->
+<section class="container">
+    <div class="content-wrap">
+        <div class="content">
+            <header class="article-header">
+                <h1 class="article-title">{$info.title}</h1>
+                <div class="article-meta">
+                    <span class="item article-meta-time">
+                        <time class="time" data-placement="bottom" data-toggle="tooltip">
+                            <i class="glyphicon glyphicon-time"></i>
+                            <span>{$info.create_time}</span>
+                        </time>
+                    </span>
+                    <span class="item article-meta-category js-article-category-id" data-placement="bottom" data-toggle="tooltip" categoryId="1">
+                        <i class="glyphicon glyphicon-list"></i>
+
+                            <a href="#">{$info.cate_name}</a>
+
+
+                    </span>
+                    <span class="item article-meta-views" data-placement="bottom" data-toggle="tooltip">
+                        <i class="glyphicon glyphicon-eye-open"></i>
+                          <span>{$info.hits}次浏览</span>
+                    </span>
+                    <span class="item article-meta-comment" data-placement="bottom" data-toggle="tooltip">
+                        <i class="glyphicon glyphicon-comment"></i>
+                        <span id="changyan_count_unit">{$info.comment_num}</span>条评论
+                        <script src="__TMPL__/public/assets/static/js/plugins.count.js" type="text/javascript"></script>
+                    </span>
+                </div>
+            </header>
+            <article class="article-content">
+                {$info.content}
+            </article>
+
+            <!--<div class="article-tags">-->
+
+                <!--标签：-->
+
+                <!--<a rel="tag" href="/article/tags?tagsId=131&amp;tagsName=程序员趣图">程序员趣图</a>-->
+
+
+            <!--</div>-->
+
+            <div class="article-reward">
+                <div class="reward-button">打赏
+                    <span class="reward-code">
+                        <span class="alipay-code">
+                            <img class="alipay-img" src="__TMPL__/public/assets/static/picture/alipay.jpg" />
+                            <b>支付宝打赏</b>
+                        </span>
+                        <span class="wechat-code">
+                            <img class="wechat-img" src="__TMPL__/public/assets/static/picture/wechat.jpg" />
+                            <b>微信打赏</b>
+                        </span>
+                    </span>
+                </div>
+                <p class="reward-notice">如果文章对您有帮助，欢迎移至上方打赏按钮...</p>
+            </div>
+            <div class="relates">
+                <div class="emoji_mood">
+                    <div data-use="emoji" id="cyEmoji" role="cylabs"></div>
+                    <script charset="utf-8" src="__TMPL__/public/assets/static/js/jquery.js" type="text/javascript"></script>
+                    <script charset="utf-8" src="__TMPL__/public/assets/static/js/changyan.labs.https.js" type="text/javascript"></script>
+                </div>
+            </div>
+            <div class="relates">
+                <div class="title">
+                    <h3>评论</h3>
+                </div>
+            </div>
+            <div class="article-comment-respond">
+                <div id="SOHUCS" sid="78"></div>
+                <script charset="utf-8" src="__TMPL__/public/assets/static/js/changyan.js" type="text/javascript"></script>
+                <script type="text/javascript">
+                    window.changyan.api.config({
+                        appid: 'cyu0QVBGu',
+                        conf: 'prod_f204d124b0eb1f92523180d8be885ce3'
+                    });
+                </script>
+            </div>
+        </div>
+    </div>
+    <aside class="sidebar">
+        <div class="fixed">
+            <div class="widget widget_search">
+                <form action="/article/search" class="navbar-form" method="get">
+                    <div class="input-group">
+                        <input autocomplete="off" class="form-control" maxlength="15" name="keyword" placeholder="请输入关键字" size="35" type="text" />
+                        <span class="input-group-btn">
+                <button class="btn btn-default btn-search">全站搜索</button>
+            </span>
+                    </div>
+                </form>
+            </div>
+            <!-- 公告详情页面展示 -->
+
+        </div>
+        <!-- 文章详情页面展示 -->
+        <div class="widget widget_hot">
+            <h3>相关推荐</h3>
+            <ul>
+                <volist name="list" id="vo">
+                    <li>
+                        <a href="{:url('article/detail',array('id'=>$vo['id']))}">
+                            <span class="thumbnail">
+
+                                <img class="thumb" data-original="{$vo.thumb}" alt="{$vo.title}" src="{$vo.thumb}" />
+                            </span>
+                            <span class="text">{$vo.title}</span>
+                            <span class="muted">
+                                <i class="glyphicon glyphicon-time"></i> <span>{:date('Y-m-d H:i',$vo['create_time'])}</span>
+                            </span>
+                            <span class="muted">
+                            </span>
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+    </aside>
+</section>
+<include file="public@footer"/>
+
+
+
+</body></html>

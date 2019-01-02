@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>个人博客</title>
+    <meta name="keywords" content="个人博客" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/index.css"/>
+    <link rel="stylesheet" href="__TMPL__/public/assets/css/style.css"/>
+    <script type="text/javascript" src="__TMPL__/public/assets/contact/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/js/jquery.SuperSlide.2.1.1.js"></script>
+    <!--[if lt IE 9]>
+    <script src="__TMPL__/public/assets/js/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="__TMPL__/public/assets/contact/css/style.css">
+</head>
+
+<body>
+<!--header start-->
+<include file="public@header"/>
+<!--header end-->
+<!--nav-->
+<include file="public@nav"/>
+<!--nav end-->
+<!--content start-->
+<div id="content">
+    <!--left-->
+    <div class="left" id="c_left">
+        <div class="s_tuijian">
+            <h2>美文推荐</h2>
+        </div>
+        <div class="content_text">
+            <volist name="list" id="vo">
+            <div class="wz">
+                <h3><a href="{:url('index/detail',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a></h3>
+                <dl>
+                    <dt><img src="{:cmf_get_image_preview_url($vo['thumb'])}" width="200"  height="123" alt=""></dt>
+                    <dd>
+                        <p class="dd_text_1">{$vo.briefcontent}</p>
+                        <p class="dd_text_2">
+                            <span class="left author">{$vo.author}</span><span class="left sj">时间:{:date('Y-m-d',$vo['create_time'])}</span>
+                            <span class="left fl">分类:<a href="#" title="{$vo.cate_name}">{$vo.cate_name}</a></span>
+                            <span class="left yd"><a href="{:url('index/detail',array('id'=>$vo['id']))}" title="阅读全文">阅读全文</a>
+                </span>
+                        <div class="clear"></div>
+                        </p>
+                    </dd>
+                    <div class="clear"></div>
+                </dl>
+            </div>
+            </volist>
+        </div>
+    </div>
+    <!--left end-->
+    <!--侧边栏目分类-->
+    <include file="public@side"/>
+    <!--end-->
+</div>
+<!--content end-->
+<!--footer start-->
+<include file="public@footer"/>
+<!--footer end-->
+<!--侧边联系导航 start-->
+<include file="public@contact"/>
+<!--侧边联系导航 end-->
+
+<!--显示小人 start-->
+<script type="text/javascript" src="__TMPL__/public/assets/smallperson/js/spig.js"></script>
+<link rel="stylesheet" href="__TMPL__/public/assets/smallperson/css/spigPet.css" type="text/css"/>
+<script type="text/javascript">
+    var isindex = true;
+    var visitor = true;
+</script>
+<div id="spig" class="spig">
+    <div id="message">正在加载中……</div>
+    <div id="mumu" class="mumu"></div>
+</div>
+<!--小人end*-->
+</body>
+</html>

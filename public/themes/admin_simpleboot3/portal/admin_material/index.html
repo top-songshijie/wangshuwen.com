@@ -1,0 +1,55 @@
+<include file="public@header"/>
+</head>
+<body>
+<div class="wrap js-check-wrap">
+    <ul class="nav nav-tabs">
+        <li class="active"><a href="javascript:;">全部素材</a></li>
+        <li><a href="{:url('AdminMaterial/add')}">添加素材</a></li>
+    </ul>
+    <form class="well form-inline margin-top-20" method="post" action="{:url('AdminMaterial/index')}">
+        时间:
+        <input type="text" class="form-control js-bootstrap-datetime" name="start_time"
+               value="{$start_time|default=''}"
+               style="width: 140px;" autocomplete="off">-
+        <input type="text" class="form-control js-bootstrap-datetime" name="end_time"
+               value="{$end_time|default=''}"
+               style="width: 140px;" autocomplete="off"> &nbsp; &nbsp;
+        关键字:
+        <input type="text" class="form-control" name="keyword" style="width: 200px;"
+               value="{$keyword|default=''}" placeholder="请输入关键字...">
+        <input type="submit" class="btn btn-primary" value="搜索"/>
+        <a class="btn btn-danger" href="{:url('AdminMaterial/index')}">清空</a>
+    </form>
+    <form class="js-ajax-form" action="" method="post">
+        <table class="table table-hover table-bordered table-list">
+            <thead>
+            <tr>
+                <th width="50">ID</th>
+                <th width="200">缩略图</th>
+                <th width="120">分类</th>
+                <th>标题</th>
+                <th width="120">创建时间</th>
+                <th width="120">操作</th>
+            </tr>
+            </thead>
+            <foreach name="list" item="vo">
+                <tr>
+                    <th width="50">{$vo.id}</th>
+                    <td><img src="{:cmf_get_image_preview_url($vo.thumb)}" height="100" />
+                    </td>
+                    <td>{$vo.cate_name}</td>
+                    <td>{$vo.title}</td>
+                    <td>{:date('Y-m-d H:i',$vo['create_time'])}</td>
+                    <td>
+                        <a href="{:url('AdminMaterial/edit',array('id'=>$vo['id']))}">详情</a>&nbsp;|&nbsp;
+                        <a href="{:url('AdminMaterial/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">删除</a>
+                    </td>
+                </tr>
+            </foreach>
+        </table>
+        <ul class="pagination">{$page|default=''}</ul>
+    </form>
+</div>
+<script src="__STATIC__/js/admin.js"></script>
+</body>
+</html>

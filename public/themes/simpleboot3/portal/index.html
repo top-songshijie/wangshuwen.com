@@ -1,0 +1,248 @@
+<!doctype html>
+
+<html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>{$site_info.site_seo_title}</title>
+    <meta charset="utf-8" />
+    <meta content="{$site_info.site_seo_description}" name="description" />
+    <meta content="{$site_info.site_seo_keywords}" name="keywords" />
+    <meta content="webkit" name="renderer" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="__TMPL__/public/assets/static/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="__TMPL__/public/assets/static/css/nprogress.css" rel="stylesheet" type="text/css" />
+    <link href="__TMPL__/public/assets/static/css/javaweb.css" rel="stylesheet" type="text/css" />
+    <link href="__TMPL__/public/assets/static/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="/favicon.ico" rel="apple-touch-icon-precomposed" />
+    <link href="/favicon.ico" rel="shortcut icon" />
+    <script src="__TMPL__/public/assets/static/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <!--[if lt IE 9]>
+    <script>window.location.href = "upgrade-browser";</script>
+    <![endif]-->
+    <!--[if gte IE 9]>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/html5shiv.min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/respond.min.js"></script>
+    <script type="text/javascript" src="__TMPL__/public/assets/static/js/selectivizr-min.js"></script>
+    <![endif]-->
+    {$site_info.site_analytics}
+</head>
+<body class="user-select single">
+<header class="header">
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#header-navbar" data-toggle="collapse" type="button">
+                    <span class="sr-only"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <h1 class="logo hvr-bounce-in">
+                    <a href="/" title="1杯浊酒 www.wangshuwen.com"><img alt="1杯浊酒" src="__TMPL__/public/assets/static/picture/logo.png" /></a>
+                </h1>
+            </div>
+            <div class="collapse navbar-collapse" id="header-navbar">
+                <ul class="nav navbar-nav navbar-right js-category-link">
+                    <li category-id="0" class="active"><a href="/">首页</a></li>
+                    <li category-id="1"><a href="{:url('article/index')}">一杯浊酒</a></li>
+                    <li category-id="2"><a href="{:url('article/index2')}">素材模板</a></li>
+                    <!--<li category-id="3"><a href="/article/category/3">编程书籍</a></li>-->
+                    <!--<li category-id="4"><a href="/article/category/4">开发工具</a></li>-->
+                    <li><a href="{:url('message/index')}">留言板</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</header>
+<section class="container">
+    <div class="content-wrap">
+        <div class="content content-no-padding">
+            <div class="carousel slide" data-interval="2500" data-ride="carousel" id="focusslide">
+                <ol class="carousel-indicators">
+                    <li class="active" data-slide-to="0" data-target="#focusslide"></li>
+                    <li data-slide-to="1" data-target="#focusslide"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <volist name="banner" id="vo">
+                        <div class="item active">
+                            <a target="_blank" href="{$vo.url}">
+                                <img class="img-responsive" alt="{$vo.title}" src="{:cmf_get_asset_url($vo.image)}" />
+                            </a>
+                            <!--<div class="carousel-caption"> </div>-->
+                        </div>
+                    </volist>
+                </div>
+                <a class="left carousel-control" data-slide="prev" href="#focusslide" rel="nofollow" role="button">
+                    <span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span>
+                    <span class="sr-only">上一个</span>
+                </a>
+                <a class="right carousel-control" data-slide="next" href="#focusslide" rel="nofollow" role="button">
+                    <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">下一个</span>
+                </a>
+            </div>
+            <div class="latest-article-title">
+                <h3>最新发布</h3>
+            </div>
+            <div class="js-latest-article-container" article-page-size="20" article-count="76">
+                <volist name="list" id="vo">
+                    <article class="excerpt excerpt-1">
+                        <a class="focus" href="{:url('article/detail',array('id'=>$vo['id']))}" title="{$vo.title}">
+                            <img class="thumb" data-original="{:cmf_get_asset_url($vo['thumb'])}" alt="{$vo.title}" src="{:cmf_get_asset_url($vo['thumb'])}" />
+                        </a>
+                        <header>
+                            <a class="cat" href="#">{$vo.cate_name}</a>
+                            <h2>
+                                <a href="{:url('article/detail',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a>
+                            </h2>
+                        </header>
+                        <p class="meta">
+                            <time class="time">
+                                <i class="glyphicon glyphicon-time"></i>
+                                <span>{$vo.create_time}</span>
+                            </time>
+                            <span class="views">
+                                <i class="glyphicon glyphicon-eye-open"></i>
+                                <span>{$vo.hits}次浏览</span>
+                            </span>
+                            <span class="comment">
+                                <i class="glyphicon glyphicon-comment"></i>
+                                <span id = "url::{:url('article/detail',array('id'=>$vo['id']))}" class = "cy_cmt_count" ></span>条评论
+                            </span>
+                        </p>
+                        <p class="note">{$vo.briefcontent}</p>
+                    </article>
+                </volist>
+            </div>
+
+            <div class="ias_loader display-none">
+                <div class="pagination-loading"><img src="__TMPL__/public/assets/static/picture/loading.gif" /></div>
+            </div>
+
+            <div class="ias_trigger">
+                <a class="js-more-article" curr-no="1" href="javascript:;">点击加载更多...</a>
+            </div>
+
+        </div>
+    </div>
+    <aside class="sidebar">
+        <div class="fixed">
+            <!--<div class="widget widget_search">-->
+                <!--<form action="/article/search" class="navbar-form" method="get">-->
+                    <!--<div class="input-group">-->
+                        <!--<input autocomplete="off" class="form-control" maxlength="15" name="keyword" placeholder="请输入关键字" size="35" type="text" />-->
+                        <!--<span class="input-group-btn">-->
+                <!--<button class="btn btn-default btn-search">全站搜索</button>-->
+            <!--</span>-->
+                    <!--</div>-->
+                <!--</form>-->
+            <!--</div>-->
+            <div class="widget widget-tabs">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="active" role="presentation"><a aria-controls="notice" data-toggle="tab" href="#notice" role="tab">网站公告</a></li>
+                    <li role="presentation"><a aria-controls="contact" data-toggle="tab" href="#contact" role="tab">站长信息</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane notice active" id="notice" role="tabpanel">
+                        <ul>
+                            <li>
+                                <a target="_blank" href="javascript:;">一杯酒，藏着万千深情；</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">一首诗，写尽繁华一生。</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">以诗酒言年华，趁时光依然，</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="javascript:;">心绪盎然，赏阅此生。</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-pane website-owner" id="contact" role="tabpanel">
+                        <h4>职业：PHP后端工程师</h4>
+                        <h4>简介：一个有梦想的菜鸟工程师</h4>
+                        <h4 class="contact-me">如果你有项目开发需求，不论是毕业设计、商业网站还是其他一些有趣的小项目；亦或是交个朋友，交流技术，欢迎和我联系：
+                            <a data-placement="top" data-toggle="tooltip" href="tencent://message/?uin=997031758&Menu=yes&Service=300&sigT=42a1e5347953b64c5ff3980f8a6e644d4b31456cb0b6ac6b27663a3c4dd0f4aa14a543b1716f9d45" title="QQ: 997031758">
+                                <img alt="997031758" class="contact-qq" src="__TMPL__/public/assets/static/picture/qq.png" />
+                            </a>
+                            <a data-placement="top" data-toggle="tooltip" href="mailto:997031758@qq.com" title="邮箱: 997031758@qq.com">
+                                <img alt="997031758@qq.com" class="contact-email" src="__TMPL__/public/assets/static/picture/email.jpg" />
+                            </a>
+                        </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="widget widget_hot">
+            <h3>1杯浊酒</h3>
+            <ul>
+                <volist name="list2" id="vo">
+                    <li>
+                        <a href="{:url('article/detail',array('id'=>$vo['id']))}">
+                            <span class="thumbnail">
+
+                                <img class="thumb" data-original="{$vo.thumb}" alt="{$vo.title}" src="{$vo.thumb}" />
+                            </span>
+                            <span class="text">{$vo.title}</span>
+                            <span class="muted">
+                                <i class="glyphicon glyphicon-time"></i> <span>{$vo.create_time}</span>
+                            </span>
+                            <span class="muted">
+                            </span>
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+
+        <div class="widget widget_hot">
+            <h3>热门素材</h3>
+            <ul>
+                <volist name="list3" id="vo">
+                    <li>
+                        <a href="{:url('article/detail',array('id'=>$vo['id']))}">
+                            <span class="thumbnail">
+
+                                <img class="thumb" data-original="{$vo.thumb}" alt="{$vo.title}" src="{$vo.thumb}" />
+                            </span>
+                            <span class="text">{$vo.title}</span>
+                            <span class="muted">
+                                <i class="glyphicon glyphicon-time"></i> <span>{$vo.create_time}</span>
+                            </span>
+                            <span class="muted">
+                            </span>
+                        </a>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+        <!--<div class="widget widget_hot">-->
+            <!--<h3 class="group_header">java菜市场官方QQ群:-->
+                <!--<a href="//shang.qq.com/wpa/qunwpa?idkey=fdd2ad416bb56c7cc9cf2590225517470db278c32b98b5be802c802e942331a8" target="_blank">-->
+                    <!--<img alt="java菜市场QQ群: 835207751" border="0" src="__TMPL__/public/assets/static/picture/group.png" />-->
+                <!--</a>-->
+            <!--</h3>-->
+            <!--<ul>-->
+                <!--<li><span class="group_tip">手机QQ扫描下方二维码可快速加群</span></li>-->
+                <!--<li>-->
+                    <!--<img alt="java菜市场QQ群: 835207751" class="group_code" src="__TMPL__/public/assets/static/picture/javaweb.qq.png" />-->
+                <!--</li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="widget widget_sentence">-->
+            <!--<h3>标签云</h3>-->
+            <!--<div class="widget-sentence-content">-->
+                <!--<div class="tags-cloud">-->
+                    <!--<a draggable="false" rel="tag" href="/article/tags?tagsId=11&amp;tagsName=%E7%B2%BE%E7%AE%80%E7%89%88" style="font-size:12.6666666667px">精简版</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </aside>
+</section>
+<include file="public@footer"/>
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyu0QVBGu"></script>
+<script src="__TMPL__/public/assets/static/js/index.js" type="text/javascript"></script>
+
+</body></html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>宋世杰的个人简历</title>
+    <meta name="theme-color" content="#ffc91d"/>
+    <meta name="viewport" content="width=device-width, maximum-scale=1, initial-scale=1"/>
+    <script src="__TMPL__/public/assets/profile/js/kico.js"></script>
+    <script src="__TMPL__/public/assets/profile/js/moreduo.js"></script>
+    <link href="__TMPL__/public/assets/profile/css/kico.css" rel="stylesheet" type="text/css"/>
+    <link href="__TMPL__/public/assets/profile/css/moreduo.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<aside class="sidebar">
+    <div class="avatar">
+        <img src="http://person.wangshuwen.com/1539695925.jpg" title="宋世杰"/>
+    </div>
+    <nav class="nav">
+        <a href="#info">资料</a>
+        <a href="#skills">技能</a>
+        <a href="#works">作品</a>
+        <a href="#story">经历</a>
+        <a href="#team">最后</a>
+    </nav>
+</aside>
+<main>
+    <section id="info">
+        <div class="wrap">
+            <h2 class="title">个人资料</h2>
+            <div class="row">
+                <div class="col-l-4">
+                    <p>姓名：宋世杰</p>
+                    <p>性别：男</p>
+                    <p>年龄：24</p>
+                    <p>学历：本科</p>
+                </div>
+                <div class="col-l-4">
+                    <p>手机：<a href="tel:13102112093">13102112093</a></p>
+                    <p>GitHub：<a href="https://github.com/top-songshijie" target="_blank">top-songshijie</a></p>
+                    <p>博客：
+                        <a href="https://blog.csdn.net/weixin_42330073" target="_blank">CSDN</a>
+                        &nbsp;&nbsp;/&nbsp;&nbsp;
+                        <a href="http://www.wangshuwen.com" target="_blank">个人博客</a>
+                    </p>
+                    <p>邮箱：<a href="mailto:15900391347@163.com">15900391347@163.com</a></p>
+                </div>
+                <div class="col-l-4">
+                    <p>个人简介：一年以上的开发经验。熟悉微信公众号，小程序的开发流程。有微信支付，支付宝支付的开发经验。熟悉TP3和TP5框架的使用。对lnmp环境有一定的了解。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skills">
+        <div class="wrap">
+            <h2 class="title">掌握的技能</h2>
+            <div class="row scrollable">
+                <div class="col-s-6 col-m-4 center-fixed">
+                    <div class="skills-icon">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <div class="skills-title">
+                        <h3>PHP</h3>
+                        <p>熟悉Thinkphp3/5框架的应用</p>
+                    </div>
+                </div>
+                <div class="col-s-6 col-m-4 center-fixed">
+                    <div class="skills-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="skills-title">
+                        <h3>JavaScript</h3>
+                        <p>能使用 JQuery Ajax 做数据对接、渲染</p>
+                    </div>
+                </div>
+                <div class="col-s-6 col-m-4 center-fixed">
+                    <div class="skills-icon">
+                        <i class="fab fa-medium-m"></i>
+                    </div>
+                    <div class="skills-title">
+                        <h3>MySQL</h3>
+                        <p>熟练掌握sql语句的应用</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="works">
+        <div class="wrap">
+            <h2 class="title">个人作品</h2>
+            <div class="row">
+                <volist name='list' id='vo'>
+                <div class="col-s-6">
+                    <div class="works-item">
+                        <img src="{:cmf_get_image_preview_url($vo['thumb'])}"/>
+                        <p>{$vo.title}</p>
+                    </div>
+                </div>
+                </volist>
+            </div>
+        </div>
+    </section>
+    <section id="story">
+        <div class="wrap">
+            <h2 class="title">个人经历</h2>
+            <div class="row">
+                <div class="col-m-8">
+                    <ul class="timeline">
+                        <li>2017.08：天津职业技术师范大大学本科毕业</li>
+                        <li>2017.09：入职天津银河百荣科技有限公司</li>
+                        <li>2017.10：使用dedeCMS完成第一个驾校预约双身份系统</li>
+                        <li>2017.11：学习ecshop独立完成了一个简单的商城系统</li>
+                        <li>2017.12：开始学习使用thinkCMF3（基于TP3.2）框架</li>
+                        <li>2018.04：升级为TinkCMF5（基于TP5.0）框架</li>
+                        <li>2018.05：购买了自己的服务器并申请了域名，深入学习lnmp环境</li>
+                        <li>2018.09：申请了自己的github、CSDN并开始搭建属于自己的博客</li>
+                    </ul>
+                </div>
+                <div class="col-m-4 center-fixed">
+                    <img src="__TMPL__/public/assets/profile/img/story.png"/>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="content-d" id="team">
+        <div class="wrap">
+            <h2 class="title">敬献给来访的您</h2>
+            <div class="row">
+                <div class="col-m-6">
+                    <p>老和尚问小和尚：“如果你前进一步是死，后退一步则亡，你该怎么办？”小和尚毫不犹豫地说：“我往旁边去。”天无绝人之路，人生路上遭遇进退两难的境况时，换个角度思考，也许就会明白：路的旁边还是路。</p>
+
+                </div>
+                <div class="col-m-6 center">
+                    <img src="__TMPL__/public/assets/profile/img/dream.jpg"/>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>© 2018 By <a href="javascript:;" target="_blank">Ssj</a>.</p>
+        <p>津ICP备18008586</p>
+    </footer>
+</main>
+<script type="text/javascript" src="__TMPL__/public/assets/contact/js/jquery-1.7.2.min.js"></script>
+<link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+</body>
+<script>
+    $(document).ready(function (){
+
+
+
+
+    });
+</script>
+</html>
