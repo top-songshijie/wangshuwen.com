@@ -34,5 +34,5 @@ class IndexController extends JieBaseController
         $this->assign('list3',$list3);
         return $this->fetch(':index');
     }
-
+    
 }

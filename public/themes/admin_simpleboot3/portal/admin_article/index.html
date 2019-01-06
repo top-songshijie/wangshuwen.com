@@ -39,7 +39,7 @@
                     </td>
                     <td>{$vo.cate_name}</td>
                     <td>{$vo.title}</td>
-                    <td>{:date('Y-m-d H:i',$vo['create_time'])}</td>
+                    <td>{$vo.create_time}</td>
                     <td>
                         <a href="{:url('AdminArticle/edit',array('id'=>$vo['id']))}">详情</a>&nbsp;|&nbsp;
                         <a href="{:url('AdminArticle/delete',array('id'=>$vo['id']))}" class="js-ajax-delete">删除</a>

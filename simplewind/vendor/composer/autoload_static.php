@@ -8,10 +8,11 @@ class ComposerStaticInit929fb365b9981d29459d58f676689cf7
 {
     public static $files = array (
         '9b552a3cc426e3287cc811caefa3cf53' => __DIR__ . '/..' . '/topthink/think-helper/src/helper.php',
-        '1cfd2761b63b0a29ed23657ea394cb2d' => __DIR__ . '/..' . '/topthink/think-captcha/src/helper.php',
         '2cffec82183ee1cea088009cef9a6fc3' => __DIR__ . '/..' . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
         '841780ea2e1d6545ea3a253239d59c05' => __DIR__ . '/..' . '/qiniu/php-sdk/src/Qiniu/functions.php',
+        '1cfd2761b63b0a29ed23657ea394cb2d' => __DIR__ . '/..' . '/topthink/think-captcha/src/helper.php',
         'cc56288302d9df745d97c934d6a6e5f0' => __DIR__ . '/..' . '/topthink/think-queue/src/common.php',
+        '644e9cafc67b331e17cc7661548f33d0' => __DIR__ . '/..' . '/weiwei/api-doc/src/helper.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -38,6 +39,10 @@ class ComposerStaticInit929fb365b9981d29459d58f676689cf7
         array (
             'Dompdf\\' => 7,
         ),
+        'A' => 
+        array (
+            'Api\\Doc\\' => 8,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -55,8 +60,8 @@ class ComposerStaticInit929fb365b9981d29459d58f676689cf7
         ),
         'think\\' => 
         array (
-            0 => __DIR__ . '/..' . '/topthink/think-image/src',
-            1 => __DIR__ . '/../../..' . '/simplewind/thinkphp/library/think',
+            0 => __DIR__ . '/../../..' . '/simplewind/thinkphp/library/think',
+            1 => __DIR__ . '/..' . '/topthink/think-image/src',
             2 => __DIR__ . '/..' . '/topthink/think-queue/src',
         ),
         'mindplay\\annotations\\' => 
@@ -74,6 +79,10 @@ class ComposerStaticInit929fb365b9981d29459d58f676689cf7
         'Dompdf\\' => 
         array (
             0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
+        ),
+        'Api\\Doc\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/weiwei/api-doc/src',
         ),
     );
 
