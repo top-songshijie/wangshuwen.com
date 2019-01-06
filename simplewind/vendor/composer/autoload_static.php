@@ -16,6 +16,10 @@ class ComposerStaticInit929fb365b9981d29459d58f676689cf7
     );
 
     public static $prefixLengthsPsr4 = array (
+        'y' => 
+        array (
+            'yupoxiong\\region\\' => 17,
+        ),
         't' => 
         array (
             'think\\helper\\' => 13,
@@ -46,6 +50,10 @@ class ComposerStaticInit929fb365b9981d29459d58f676689cf7
     );
 
     public static $prefixDirsPsr4 = array (
+        'yupoxiong\\region\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/yupoxiong/region/src',
+        ),
         'think\\helper\\' => 
         array (
             0 => __DIR__ . '/..' . '/topthink/think-helper/src',

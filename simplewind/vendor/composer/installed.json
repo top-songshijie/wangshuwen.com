@@ -832,5 +832,50 @@
             }
         ],
         "description": "The ThinkPHP5 Api Doc Package"
+    },
+    {
+        "name": "yupoxiong/region",
+        "version": "v1.0.2",
+        "version_normalized": "1.0.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/yupoxiong/region.git",
+            "reference": "b11b794cf8081a91cc6e4625035811a5fd9ac564"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/yupoxiong/region/zipball/b11b794cf8081a91cc6e4625035811a5fd9ac564",
+            "reference": "b11b794cf8081a91cc6e4625035811a5fd9ac564",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "time": "2018-11-05T11:53:09+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "yupoxiong\\region\\": "src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "yupoxiong",
+                "email": "i@yufuping.com",
+                "homepage": "https://www.yufuping.com"
+            }
+        ],
+        "description": "ThinkPHP省市区(县)街道四级联动扩展",
+        "homepage": "https://github.com/yupoxiong/region",
+        "keywords": [
+            "region",
+            "thinkphp",
+            "省市区"
+        ]
     }
 ]
