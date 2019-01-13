@@ -44,13 +44,32 @@ class ArticleController extends JieBaseController
 		//浏览排行
 		$list2 = $articleModel->getHitsList(2);
 		//文章总数
-		$count = $articleModel->getCount(1);
+		$count = $articleModel->getCount(2);
 
 		$this->assign('list',$list);
 		$this->assign('list2',$list2);
 		$this->assign('count',$count);
 		return $this->fetch();
 	}
+
+    /**
+     * Python爬虫学习之路
+     */
+    public function index3()
+    {
+        $articleModel = new ArticleModel();
+        //最新发布
+        $list = $articleModel->getList(3);
+        //浏览排行
+        $list2 = $articleModel->getHitsList(3);
+        //文章总数
+        $count = $articleModel->getCount(3);
+
+        $this->assign('list',$list);
+        $this->assign('list2',$list2);
+        $this->assign('count',$count);
+        return $this->fetch();
+    }
 
 	/**
 	 * 文章详情
@@ -84,13 +103,17 @@ class ArticleController extends JieBaseController
 		return $this->fetch();
 	}
 
+
+    /**
+     * 分页ajax
+     */
 	public function page()
     {
         $param = $this->request->param();
         $articleModel = new ArticleModel();
         //最新发布
         $list = $articleModel->getPageList($param['cate_id'],$param['page'],$param['num']);
-        if($list->isEmpty()){
+        if(empty($list)){
 			$this->apiResponse(0,'获取数据成功');
 		}
 		$this->apiResponse(1,'获取数据成功',$list);

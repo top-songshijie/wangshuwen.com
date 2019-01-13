@@ -297,5 +297,23 @@ class RestBaseController
 
     }
 
+	/**
+	 *  API返回信息格式函数 ；0失败，1成功
+	 * @param string $code
+	 * @param string $message
+	 * @param array $data
+	 */
+	public function apiResponse($code = '', $msg = '', $data = array())
+	{
+		header('Access-Control-Allow-Origin: *');
+		header('Content-Type:application/json; charset=utf-8');
+		$result = array(
+			'code' => $code,
+			'msg' => $msg,
+			'data' => $data,
+		);
+		die(json_encode($result, JSON_UNESCAPED_UNICODE));
+
+	}
 
 }

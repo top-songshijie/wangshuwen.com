@@ -32,7 +32,8 @@
         "topthink/think-queue": "^1.1.4",
         "electrolinux/phpquery": "^0.9.6",
         "weiwei/api-doc": "^1.6",
-        "yupoxiong/region": "^1.0"
+        "yupoxiong/region": "^1.0",
+        "php-curl-class/php-curl-class": "^8.4"
     },
     "extra": {
         "think-path":"simplewind/thinkphp"

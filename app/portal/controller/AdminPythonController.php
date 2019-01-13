@@ -1,8 +1,8 @@
 <?php
 /**
- * 素材模板
+ * Python爬虫学习之路
  * Author: xiaojie
- * DateTime: 2018/12/31 15:21
+ * DateTime: 2019/01/10 09:14
  */
 namespace app\portal\controller;
 
@@ -11,19 +11,19 @@ use app\portal\model\CateModel;
 use cmf\controller\AdminJieBaseController;
 
 
-class AdminMaterialController extends AdminJieBaseController
+class AdminPythonController extends AdminJieBaseController
 {
 
 	/**
-	 * 素材模板
+	 * Python爬虫学习之路
 	 * @adminMenu(
-	 *     'name'   => '素材模板',
+	 *     'name'   => 'Python爬虫学习之路',
 	 *     'parent' => 'portal/AdminArticle/default',
 	 *     'display'=> true,
 	 *     'hasView'=> true,
 	 *     'order'  => 10000,
 	 *     'icon'   => '',
-	 *     'remark' => '素材模板',
+	 *     'remark' => 'Python爬虫学习之路',
 	 *     'param'  => ''
 	 * )
 	 */
@@ -34,7 +34,7 @@ class AdminMaterialController extends AdminJieBaseController
 			->alias('a')
 			->field('c.cate_name,a.*')
 			->join('cate c','c.id = a.cate_id')
-			->where('a.cate_id',2)
+			->where('a.cate_id',3)
 			->order('a.id DESC')
 			->paginate(20);
 
@@ -80,7 +80,7 @@ class AdminMaterialController extends AdminJieBaseController
 		$param = $this->request->param();
 		$articleModel = new ArticleModel();
 
-		$param['cate_id'] = 2;
+		$param['cate_id'] = 3;
 		$res = $articleModel->save($param);
 		if($res){
 			$this->success('添加成功');
@@ -127,8 +127,7 @@ class AdminMaterialController extends AdminJieBaseController
 	{
 		$param = $this->request->param();
 		$articleModel = new ArticleModel();
-
-        $param['is_recommend'] = isset($param['is_recommend'])?$param['is_recommend']:0;
+		$param['is_recommend'] = isset($param['is_recommend'])?$param['is_recommend']:0;
 		$res = $articleModel->isUpdate(true)->save($param);
 		if($res){
 			$this->success('更新成功');

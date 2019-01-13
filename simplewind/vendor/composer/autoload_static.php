@@ -43,6 +43,10 @@ class ComposerStaticInit929fb365b9981d29459d58f676689cf7
         array (
             'Dompdf\\' => 7,
         ),
+        'C' => 
+        array (
+            'Curl\\' => 5,
+        ),
         'A' => 
         array (
             'Api\\Doc\\' => 8,
@@ -87,6 +91,10 @@ class ComposerStaticInit929fb365b9981d29459d58f676689cf7
         'Dompdf\\' => 
         array (
             0 => __DIR__ . '/..' . '/dompdf/dompdf/src',
+        ),
+        'Curl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-curl-class/php-curl-class/src/Curl',
         ),
         'Api\\Doc\\' => 
         array (

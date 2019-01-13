@@ -2,7 +2,7 @@
 
 <html lang="zh-CN" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>留言板 - 1杯浊酒</title>
+    <title>素材模板 - 1杯浊酒</title>
     <meta charset="utf-8" />
     <meta content="{$site_info.site_seo_description}" name="description" />
     <meta content="{$site_info.site_seo_keywords}" name="keywords" />
@@ -46,10 +46,10 @@
                     <li category-id="0"><a href="/">首页</a></li>
                     <li category-id="1"><a href="{:url('article/index')}">一杯浊酒</a></li>
                     <li category-id="2"><a href="{:url('article/index2')}">素材模板</a></li>
-                    <li category-id="3" ><a href="{:url('article/index3')}">Python爬虫学习之路</a></li>
+                    <li category-id="3" class="active"><a href="{:url('article/index3')}">Python爬虫学习之路</a></li>
                     <!--<li category-id="3"><a href="/article/category/3">编程书籍</a></li>-->
                     <!--<li category-id="4"><a href="/article/category/4">开发工具</a></li>-->
-                    <li class="active"><a href="{:url('message/index')}">留言板</a></li>
+                    <li><a href="{:url('message/index')}">留言板</a></li>
                 </ul>
 
             </div>
@@ -58,20 +58,49 @@
 </header>
 <section class="container">
     <div class="content-wrap">
-        <div class="content">
-            <header class="message-header">
-                <h1 class="message-title">生命不息，代码优化不止...</h1>
-            </header>
-            <div class="article-comment-respond">
-                <div id="SOHUCS" sid="MESSAGE_BOARD"></div>
-                <script charset="utf-8" src="__TMPL__/public/assets/static/js/changyan.js" type="text/javascript"></script>
-                <script type="text/javascript">
-                    window.changyan.api.config({
-                        appid: 'cyu0QVBGu',
-                        conf: 'prod_f204d124b0eb1f92523180d8be885ce3'
-                    });
-                </script>
+        <div class="content content-no-padding">
+            <div class="latest-article-title">
+                <h3><span class="js-category-name">&nbsp;</span> <span class="article-count">共 {$count} 条数据</span></h3>
             </div>
+            <div class="js-category-article-container" article-page-size="15" category-id="2" article-count="11">
+                <volist name="list" id="vo">
+                    <article class="excerpt excerpt-1">
+                        <a class="focus" href="{:url('article/detail',array('id'=>$vo['id']))}" title="{$vo.title}">
+                            <img class="thumb" data-original="{:cmf_get_asset_url($vo['thumb'])}" alt="{$vo.title}" src="{:cmf_get_asset_url($vo['thumb'])}" />
+                        </a>
+                        <header>
+                            <a class="cat" href="#">{$vo.cate_name}</a>
+                            <h2>
+                                <a href="{:url('article/detail',array('id'=>$vo['id']))}" title="{$vo.title}">{$vo.title}</a>
+                            </h2>
+                        </header>
+                        <p class="meta">
+                            <time class="time">
+                                <i class="glyphicon glyphicon-time"></i>
+                                <span>{$vo.create_time}</span>
+                            </time>
+                            <span class="views">
+                                <i class="glyphicon glyphicon-eye-open"></i>
+                                <span>{$vo.hits}次浏览</span>
+                            </span>
+                            <span class="comment">
+                                <i class="glyphicon glyphicon-comment"></i>
+                                <span id = "url::{:url('article/detail',array('id'=>$vo['id']))}" class = "cy_cmt_count" ></span>条评论
+                            </span>
+                        </p>
+                        <p class="note">{$vo.briefcontent}</p>
+                    </article>
+                </volist>
+            </div>
+
+            <div class="ias_loader display-none">
+                <div class="pagination-loading"><img src="__TMPL__/public/assets/static/picture/loading.gif" /></div>
+            </div>
+
+            <div class="ias_trigger">
+                <a class="js-more-article" curr-no="1" href="javascript:;">点击加载更多...</a>
+            </div>
+
         </div>
     </div>
     <aside class="sidebar">
@@ -86,50 +115,32 @@
                     <!--</div>-->
                 <!--</form>-->
             <!--</div>-->
-            <div class="widget widget-tabs">
-                <ul class="nav nav-tabs" role="tablist">
-                    <li class="active" role="presentation"><a aria-controls="notice" data-toggle="tab" href="#notice" role="tab">网站公告</a></li>
-                    <li role="presentation"><a aria-controls="contact" data-toggle="tab" href="#contact" role="tab">站长信息</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div class="tab-pane notice active" id="notice" role="tabpanel">
-                        <ul>
-                            <li>
-                                <a target="_blank" href="javascript:;">一杯酒，藏着万千深情；</a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="javascript:;">一首诗，写尽繁华一生。</a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="javascript:;">以诗酒言年华，趁时光依然，</a>
-                            </li>
-                            <li>
-                                <a target="_blank" href="javascript:;">心绪盎然，赏阅此生。</a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tab-pane website-owner" id="contact" role="tabpanel">
-                        <h4>职业：PHP后端工程师</h4>
-                        <h4>简介：一个有梦想的菜鸟工程师</h4>
-                        <h4 class="contact-me">如果你有项目开发需求，不论是毕业设计、商业网站还是其他一些有趣的小项目；亦或是交个朋友，交流技术，欢迎和我联系：
-                            <a data-placement="top" data-toggle="tooltip" href="tencent://message/?uin=997031758&Menu=yes&Service=300&sigT=42a1e5347953b64c5ff3980f8a6e644d4b31456cb0b6ac6b27663a3c4dd0f4aa14a543b1716f9d45" title="QQ: 997031758">
-                                <img alt="997031758" class="contact-qq" src="__TMPL__/public/assets/static/picture/qq.png" />
-                            </a>
-                            <a data-placement="top" data-toggle="tooltip" href="mailto:997031758@qq.com" title="邮箱: 997031758@qq.com">
-                                <img alt="997031758@qq.com" class="contact-email" src="__TMPL__/public/assets/static/picture/email.jpg" />
-                            </a>
-                        </h4>
-                    </div>
-                </div>
-            </div>
+        </div>
+        <div class="widget widget_hot">
+            <h3>浏览排行</h3>
+            <ul>
+                <volist name="list2" id="vo">
+                    <li>
+                        <a href="{:url('article/detail',array('id'=>$vo['id']))}">
+                        <span class="thumbnail">
+
+                            <img class="thumb" data-original="{$vo.thumb}" alt="{$vo.title}" src="{$vo.thumb}" />
+                        </span>
+                            <span class="text">{$vo.title}</span>
+                            <span class="muted">
+                            <i class="glyphicon glyphicon-time"></i> <span>{$vo.create_time}</span>
+                        </span>
+                            <span class="muted">
+                        </span>
+                        </a>
+                    </li>
+                </volist>
+            </ul>
         </div>
     </aside>
 </section>
 <include file="public@footer"/>
-<script type="text/javascript">
-    $(".js-category-link li").removeClass("active");
-    $(".js-category-link li:last").addClass("active");
-</script>
-
+<script id="cy_cmt_num" src="https://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyu0QVBGu"></script>
+<script src="__TMPL__/public/assets/static/js/category.js" type="text/javascript"></script>
 
 </body></html>

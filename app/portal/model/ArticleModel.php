@@ -75,7 +75,7 @@ class ArticleModel extends Model
 			->join('__CATE__ c','c.id = a.cate_id')
 			->where($map)
             ->page(1,10)
-			->order('a.id DESC')
+			->order('a.is_recommend DESC,a.id DESC')
 			->select();
 		return $list;
 	}
@@ -112,7 +112,7 @@ class ArticleModel extends Model
 	{
 		$info = $this
 			->alias('a')
-			->field('a.id,a.title,a.author,a.content,a.create_time,a.hits,a.comment_num,c.cate_name')
+			->field('a.id,a.title,a.author,a.content,a.briefcontent,a.create_time,a.hits,a.comment_num,c.cate_name')
 			->join('cate c','c.id = a.cate_id')
 			->where('a.id',$id)
 			->find();
@@ -138,8 +138,8 @@ class ArticleModel extends Model
             ->join('__CATE__ c','c.id = a.cate_id')
             ->where($map)
             ->page($page,$num)
-            ->order('a.id DESC')
-            ->select();
+            ->order('a.is_recommend DESC,a.id DESC')
+            ->select()->toArray();
         return $list;
     }
 

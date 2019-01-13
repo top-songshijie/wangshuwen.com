@@ -8,6 +8,8 @@ namespace app\portal\controller;
 
 use app\portal\model\ArticleModel;
 use cmf\controller\JieBaseController;
+use Curl\Curl;
+use think\Db;
 
 class IndexController extends JieBaseController
 {
@@ -34,5 +36,11 @@ class IndexController extends JieBaseController
         $this->assign('list3',$list3);
         return $this->fetch(':index');
     }
-    
+
+    public function test()
+	{
+
+		return $this->fetch();
+	}
+
 }

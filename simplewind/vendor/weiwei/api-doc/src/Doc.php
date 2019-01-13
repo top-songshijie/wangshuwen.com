@@ -4,9 +4,9 @@ namespace Api\Doc;
 class Doc
 {
     protected  $config = [
-        'title'=>'APi接口文档',
-        'version'=>'1.0.0',
-        'copyright'=>'Powered By Zhangweiwei',
+        'title'=>'免费APi接口文档',
+        'version'=>'',
+        'copyright'=>'Powered By wangshuwen.com',
         'password' => '',
         'static_path' => '/assets',
         'controller' => [

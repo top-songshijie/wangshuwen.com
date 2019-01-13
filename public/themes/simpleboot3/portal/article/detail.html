@@ -4,8 +4,8 @@
 <head>
     <title>{$info.title} - 1杯浊酒</title>
     <meta charset="utf-8" />
-    <meta content="{$site_info.site_seo_description}" name="description" />
-    <meta content="{$site_info.site_seo_keywords}" name="keywords" />
+    <meta content="{$info.briefcontent}" name="description" />
+    <meta content="{$info.briefcontent}" name="keywords" />
     <meta content="webkit" name="renderer" />
     <meta content="IE=edge" http-equiv="X-UA-Compatible" />
     <meta content="width=device-width, initial-scale=1" name="viewport" />
@@ -46,6 +46,7 @@
                     <li category-id="0"><a href="/">首页</a></li>
                     <li category-id="1"><a href="{:url('article/index')}">一杯浊酒</a></li>
                     <li category-id="2"><a href="{:url('article/index2')}">素材模板</a></li>
+                    <li category-id="3"><a href="{:url('article/index3')}">Python爬虫学习之路</a></li>
                     <!--<li category-id="3"><a href="/article/category/3">编程书籍</a></li>-->
                     <!--<li category-id="4"><a href="/article/category/4">开发工具</a></li>-->
                     <li><a href="{:url('message/index')}">留言板</a></li>

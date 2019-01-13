@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>这里有你们想要的</title>
+</head>
+<body>
+    <div id="content">
+
+    </div>
+</body>
+
+<script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+<script>
+    var page = 1;
+    addpic(page)
+
+    function addpic(page) {
+        $.ajax({
+            url: "http://api.wangshuwen.com/getWelfareImages",
+            type: "GET",
+            dataType: 'json',
+            data:{
+                'page':page,
+                'pageSize':1,
+                'crack':1,
+            },
+            success: function (res) {
+                var data = res.data;
+                data.forEach(function (item) {
+                    var data = ` <img height="500" src="data:image/png;base64,`+item.base64_url+`">`
+                    $('#content').append(data)
+                    page = parseInt(page) + 1;
+                    addpic(page)
+                })
+
+            }
+        });
+    }
+
+</script>
+</html>

@@ -140,6 +140,8 @@ class AdminArticleController extends AdminJieBaseController
 	{
 		$param = $this->request->param();
 		$articleModel = new ArticleModel();
+
+        $param['is_recommend'] = isset($param['is_recommend'])?$param['is_recommend']:0;
 		$res = $articleModel->isUpdate(true)->save($param);
 		if($res){
 			$this->success('更新成功');
